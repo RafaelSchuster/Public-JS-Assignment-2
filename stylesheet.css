@@ -1,6 +1,7 @@
-body{
+body {
     font-family: 'Poppins', sans-serif;
 }
+
 .searchBox {
     display: inline-block;
     position: absolute;
@@ -51,7 +52,8 @@ form.example::after {
     font-weight: bold;
     text-align: center;
 }
-.spin{
+
+.spin {
     position: absolute;
     left: 450px;
     top: 200px;
