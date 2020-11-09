@@ -58,3 +58,8 @@ form.example::after {
     left: 450px;
     top: 200px;
 }
+.chart{
+    position: absolute;
+    margin-top: 300px;
+    top: 1500px;
+}
