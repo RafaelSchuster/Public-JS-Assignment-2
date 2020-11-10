@@ -6,9 +6,9 @@ const companyImg = document.getElementById('companyImg');
 const describe = document.getElementById('description');
 const price = document.getElementById('price');
 const change = document.getElementById('change');
-const spinner = document.querySelector('.spin');
+const spinner = document.querySelector('.spin-company');
 
-async function getFetch(url) {
+async function getFetch2(url) {
     const response = await fetch(url);
     const data = await response.json();
     return data;
@@ -22,11 +22,11 @@ async function fetchHistory(url) {
 
 async function addContent() {
     setTimeout(() => {
-        getFetch(`https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/${symbol}`)
+        getFetch2(`https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/${symbol}`)
             .then(info => {
                 let headText = document.createTextNode(`${info.profile.companyName}`);
                 header.appendChild(headText);
-                companyImg.src = `${info.profile.image}`;
+                    companyImg.src = `${info.profile.image}`;
                 if (info.profile.description) {
                     describe.innerText = `${info.profile.description}`;
                 }
@@ -70,7 +70,7 @@ let myChart = document.getElementById('myChart').getContext('2d');
 let ctx = document.getElementById('myChart').getContext('2d');
 
 async function chartIt() {
-    spinner.className = 'spin spinner-border';
+    spinner.className = 'spin-company spinner-border';
     await addContent();
     setTimeout(() => {
         spinner.className = 'spin';
@@ -95,3 +95,53 @@ async function chartIt() {
     }, 4000)
 }
 chartIt();
+
+
+
+
+
+
+// let stockChart = new Chart(myChart2, {
+//             type: 'bar',
+//             data: {
+//                 labels: ['Stock Price'],
+//                 datasets: [{
+//                         label: 'Stock Price',
+//                         data: [1,300,600,1000,356,789,100],
+//                         borderWidth: 1,
+//                         borderColor: '#777',
+//                         hoverBorderWidth: '#000',
+//                         hoverBorderColor: '#000',
+//                     }],
+//                     options: {
+//                         title: {
+//                             display: true,
+//                             text: '',
+//                             fontSize: 25
+//                         },
+//                         legend: {
+//                             display: true,
+//                             position: 'right',
+//                             labels: {
+//                                 fontColor: '#000'
+//                             }
+//                         },
+//                         layout: {
+//                             padding: {
+//                                 left: 50,
+//                             }
+//                         },
+//                         tooltips: {
+//                             enabled: true
+//                         },
+//                         scales:{
+//                             yAxes:[{
+//                                 ticks:{
+//                                     suggestedMin: 10,
+//                                     suggestedMax:500
+//                                 }
+//                             }]
+//                         }
+//                     }
+
+//                 }})
