@@ -8,9 +8,57 @@ body {
     color: rgb(20, 10, 59);
 }
 .main{
-    margin-top: 150px;
-}
+    margin-top: 30px;
 
+}
+#companyImg{
+    margin-bottom: 30px;
+    position: absolute;
+    left: 180px;
+    top: 95px;
+}
+#description{
+    position: absolute;
+    top: 200px;
+}
+.chart{
+    position: absolute;
+    margin-top: 300px;
+    top: 1500px;
+    width: 100px;
+}
+#myChart{
+    position: absolute;
+    background-color: white;
+    border: 1px solid rgb(7, 16, 53);
+    margin-top: 20px;
+    top: 500px;
+}
+.navLink{
+    color:white;
+    text-decoration: none;
+}
+.navLink:hover {
+    text-decoration: none;
+    color:  #12adb3;
+}
+a:hover{
+    text-decoration: none;
+    color:  #ffa36c;
+}
+#companyName{
+    color: #ffa36c;
+}
+#price{
+    position: absolute;
+    top: 450px;
+}
+#change{
+    position: absolute;
+    top: 0%;
+    top: 450px;
+    left: 540px;
+}
 .searchBox {
     display: inline-block;
     position: absolute;
@@ -33,7 +81,7 @@ form.example button {
     float: left;
     width: 20%;
     padding: 10px;
-    background: #0a385e;
+    background:  rgb(7, 16, 53);
     color: white;
     font-size: 17px;
     border: 1px solid grey;
@@ -63,7 +111,7 @@ form.example::after {
     text-align: center;
 }
 .list-group-item{
-    background-color: rgb(156, 181, 197);
+    background-color: #0f3057;
     color: white;
 }
 
@@ -71,11 +119,6 @@ form.example::after {
     position: absolute;
     left: 450px;
     top: 200px;
-}
-.chart{
-    position: absolute;
-    margin-top: 300px;
-    top: 1500px;
 }
 
 .spin-company{
@@ -101,10 +144,50 @@ form.example::after {
     overflow: hidden;
     background-color: rgb(7, 16, 53);
 }
+.marquee2{
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background-color: rgb(7, 16, 53);
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    align-items: center;
+
+}
 .spanMarquee{
     display: inline-block;
     padding-left: 100%;
     -webkit-animation:scroll 7000s infinite linear;
-    color: rgb(231, 227, 184);
+    color: white;
+    margin-bottom: 0;
+
+}
+.priceChange{
+    background-color: rgb(192, 226, 184);
+    color: rgb(50, 145, 86);
+}
+.priceRed{
+    background-color: rgb(187, 95, 95);
+    color: rgb(245, 212, 212) ;
+}
+.head{
+    position: absolute;
+    top: 92px;
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    background-color: rgb(182, 58, 58);
+    height: 100%;
+    width: 100px;
+    left: -60px;
+    text-align: start;
+    align-items: center;
+    font-size: 70px;
+    font-weight: bolder;
+    padding-top: 50px;
+    padding-left: 10px;
+    color: white;
+
+
 
 }

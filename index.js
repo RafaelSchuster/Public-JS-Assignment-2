@@ -26,7 +26,6 @@ async function marqueeText() {
     await getMarquee('https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/quotes/nyse')
         .then(info => {
             let arrayQuotes = [];
-            console.log(info.length)
             for (let i = 0; i < info.length; i++) {
                 arrayQuotes[i] = Object.values(info[i]);
                 arrayQuotes[i] = arrayQuotes[i].splice(0, 3);
@@ -34,10 +33,10 @@ async function marqueeText() {
             
             arrayQuotes = arrayQuotes.flat()
             for(let j = 1; j < arrayQuotes.length; j += 3){
-                arrayQuotes[j]= `:`
+                arrayQuotes[j]= `:\u00A0 $`
             }
+            arrayQuotes.unshift('Stock Prices in Real Time:\u00A0\u00A0\u00A0\u00A0')
             arrayQuotes= arrayQuotes.join(' ')
-            console.log(arrayQuotes)
             marquee.innerText = arrayQuotes
         })
 
@@ -52,10 +51,18 @@ function clearList() {
 function addList(symbol, name, change, img) {
     spinner.className = 'spin spinner-border';
     setTimeout(() => {
+        
         spinner.className = 'spin';
         let node = document.createElement('a');
         node.className = 'list-group-item';
-        let textnode = document.createTextNode(`${name} (${symbol}) ${change}\u00A0\u00A0\u00A0\u00A0 `);
+        let priceChanges = document.createElement('div')
+        priceChanges.className = 'priceChange'
+        change = change.replace(/[{()}]/g, '')
+        if (Math.sign(parseFloat(`${change}`)) == -1) {
+            priceChanges.className ='priceRed'}
+        let priceText = document.createTextNode(`${change}`)
+        priceChanges.appendChild(priceText)
+        let textnode = document.createTextNode(`${name} (${symbol})\u00A0\u00A0\u00A0\u00A0 `);
         node.appendChild(textnode);
         let image = document.createElement('img')
         image.setAttribute('src', img);
@@ -66,6 +73,7 @@ function addList(symbol, name, change, img) {
         node.title = `${name} (${symbol}) ${change}`;
         node.href = `company.html?symbol=${symbol}`;
         resultsList.appendChild(node);
+        resultsList.appendChild(priceChanges)
     }, 1500);
 }
 
