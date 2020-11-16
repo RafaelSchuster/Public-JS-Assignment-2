@@ -9,8 +9,9 @@ class SearchForm {
         const data = await response.json();
         return data;
     }
-    OnSearch(companies) {
-        results.renderResults(companies);
+
+    OnSearch(companies, search) {
+        results.renderResults(companies, search);
     }
     OnLoad() {
         let searchBar = document.createElement('input');
@@ -36,7 +37,7 @@ class SearchForm {
                     for (let i = 0; i < 10; i++) {
                         form.getFetch(`https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/${resultss[i].symbol}`)
                             .then(fullProfile => {
-                                form.OnSearch(fullProfile);
+                                form.OnSearch(fullProfile, searchInput);
                             });
                     };
                 });
@@ -45,4 +46,4 @@ class SearchForm {
 }
 
 const form = new SearchForm(document.getElementById('form'));
-form.OnLoad()
+form.OnLoad();
