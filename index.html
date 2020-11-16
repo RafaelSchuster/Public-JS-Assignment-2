@@ -20,15 +20,18 @@
     <nav class="navbar navbar-light" style="background-color: #ffa372">
         <a href="index.html" class="navLink">SearchStocksForFree.com</a>
     </nav>
+
     <h1 class="head"> Search Stocks For Free</h1>
     <h1 class="marquee"><span class="spanMarquee"></span></h1>
     <div class="container box">
-        <form class="example searchBox" action="action_page.php">
-            <input type="text" placeholder="Search Stocks.." name="search" id="inputField">
-            <button type="" id="searchButton"><i class="fa fa-search"></i></button> <span class="spin"></span>
-        </form>
-        <ul class="list-group"></ul>
+        <form id="form" class="example searchBox" action="action_page.php"><span class="spin"></span></form>
+        <ul id="results" class="list-group"></ul>
     </div>
+
+
+
+
+
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
@@ -44,9 +47,8 @@
         import{marquee, getMarquee, marqueeConstruct} from './marquee.js';
         getMarquee('https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/quotes/nasdaq');
     </script>
-    <script src="index.js"></script>
-
-
+    <script src="searchResults.js"></script>
+    <script src="searchForm.js"></script>
 </body>
 
 </html>

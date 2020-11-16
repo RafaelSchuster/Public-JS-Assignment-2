@@ -14,20 +14,13 @@ async function getFetch2(url) {
     return data;
 }
 
-async function fetchHistory(url) {
-    const response = await fetch(url);
-    const dataHistory = await response.json();
-    return dataHistory;
-}
-
 async function addContent() {
     setTimeout(() => {
         getFetch2(`https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/company/profile/${symbol}`)
             .then(info => {
                 let headText = document.createTextNode(`${info.profile.companyName}`);
                 header.appendChild(headText);
-                    companyImg.src = `${info.profile.image}`;
-                    // companyImg.onerror = companyImg.src='Images/favicon_io/favicon-32x32.png';
+                companyImg.src = `${info.profile.image}`;
                 if (info.profile.description) {
                     describe.innerText = `${info.profile.description}`;
                 }
@@ -40,7 +33,7 @@ async function addContent() {
                     change.style.color = 'rgb(39, 199, 119)';
                 };
             });
-        fetchHistory(`https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/historical-price-full/${symbol}?serietype=line)`)
+        getFetch2(`https://stock-exchange-dot-full-stack-course-services.ew.r.appspot.com/api/v3/historical-price-full/${symbol}?serietype=line)`)
             .then(infoHistory => {
                 arrayValues = [];
                 for (let i = 0; i < infoHistory.historical.length; i++) {

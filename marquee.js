@@ -4,14 +4,12 @@ export async function getMarquee(url) {
     const response = await fetch(url);
     const data = await response.json();
     const marqueeData = new marqueeConstruct(data, marquee);
-    marqueeData.report();
     marqueeData.render();
     return data;
 }
 
 export function marqueeConstruct(data, marqueePlaceholder) {
     this.data = data;
-    this.report = () => {console.log(this.data)}
     this.render = () =>{
         let arrayQuotes = [];
             for (let i = 0; i < this.data.length; i++) {
@@ -25,7 +23,6 @@ export function marqueeConstruct(data, marqueePlaceholder) {
             arrayQuotes.unshift('Stock Prices in Real Time:\u00A0\u00A0\u00A0\u00A0');
             arrayQuotes= arrayQuotes.join(' ');
             marqueePlaceholder.innerText = arrayQuotes;
-            console.log(arrayQuotes);
     }
 }
 
