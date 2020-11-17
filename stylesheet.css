@@ -7,58 +7,73 @@ body {
     background-repeat: no-repeat;
     color: rgb(20, 10, 59);
 }
-.main{
+
+.main {
     margin-top: 30px;
 
 }
-#companyImg{
+
+#companyImg {
     margin-bottom: 30px;
     position: absolute;
     left: 180px;
     top: 95px;
 }
-#description{
+
+#description {
     position: absolute;
-    top: 200px;
+    top: 270px;
+    margin-bottom: 30px;
 }
-.chart{
+
+.chart {
     position: absolute;
-    margin-top: 300px;
-    top: 1500px;
+    margin-top: 330px;
+    top: 3600px;
     width: 100px;
 }
-#myChart{
+
+#myChart {
     position: absolute;
     background-color: white;
     border: 1px solid rgb(7, 16, 53);
     margin-top: 20px;
-    top: 500px;
+    top: 550px;
 }
-.navLink{
-    color:white;
+
+.navLink {
+    color: white;
     text-decoration: none;
 }
+
 .navLink:hover {
     text-decoration: none;
-    color:  #12adb3;
+    color: #12adb3;
 }
-a:hover{
+
+a:hover {
     text-decoration: none;
-    color:  #ffa36c;
-}
-#companyName{
     color: #ffa36c;
 }
-#price{
-    position: absolute;
-    top: 450px;
+
+#companyName {
+    color: #ffa36c;
 }
-#change{
+
+#price {
     position: absolute;
-    top: 0%;
-    top: 450px;
-    left: 540px;
+    top: 95px;
+    left: 1600px;
+    margin-top: 40px;
+    color: rgb(23, 129, 119);
 }
+
+#change {
+    position: absolute;
+    top: 134px;
+    left: 1750px;
+}
+
 .searchBox {
     display: inline-block;
     position: absolute;
@@ -81,7 +96,7 @@ form.example button {
     float: left;
     width: 20%;
     padding: 10px;
-    background:  rgb(7, 16, 53);
+    background: rgb(7, 16, 53);
     color: white;
     font-size: 17px;
     border: 1px solid grey;
@@ -110,7 +125,8 @@ form.example::after {
     font-weight: bold;
     text-align: center;
 }
-.list-group-item{
+
+.list-group-item {
     background-color: #0f3057;
     color: white;
 }
@@ -121,30 +137,35 @@ form.example::after {
     top: 200px;
 }
 
-.spin-company{
+.spin-company {
     position: absolute;
     left: 900px;
 }
-.box{
+
+.box {
     position: absolute;
     display: inline-block;
     background-color: rgb(65, 14, 49);
 }
-@-webkit-keyframes scroll{
-    0%{
-        -webkit-transform: translate(0,0);
+
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translate(0, 0);
     }
-    100%{
-        -webkit-transform: translate(-100%,0);
+
+    100% {
+        -webkit-transform: translate(-100%, 0);
     }
 }
-.marquee{
+
+.marquee {
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
     background-color: rgb(7, 16, 53);
 }
-.marquee2{
+
+.marquee2 {
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -155,23 +176,27 @@ form.example::after {
     align-items: center;
 
 }
-.spanMarquee{
+
+.spanMarquee {
     display: inline-block;
     padding-left: 100%;
-    -webkit-animation:scroll 7000s infinite linear;
+    -webkit-animation: scroll 7000s infinite linear;
     color: white;
     margin-bottom: 0;
 
 }
-.priceChange{
+
+.priceChange {
     background-color: rgb(192, 226, 184);
     color: rgb(50, 145, 86);
 }
-.priceRed{
+
+.priceRed {
     background-color: rgb(187, 95, 95);
-    color: rgb(245, 212, 212) ;
+    color: rgb(245, 212, 212);
 }
-.head{
+
+.head {
     position: absolute;
     top: 92px;
     writing-mode: vertical-lr;
@@ -187,6 +212,18 @@ form.example::after {
     padding-top: 50px;
     padding-left: 10px;
     color: white;
+
+
+
+}
+
+.compare {
+    position: absolute;
+    display: inline;
+    background-color: rgb(182, 58, 58);
+    color: white;
+    right: -0.5px;
+    margin-right: 10px;
 
 
 
