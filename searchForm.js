@@ -1,5 +1,6 @@
 let searchInput;
 let companies = [];
+
 class SearchForm {
     constructor(form) {
         this.form = form;
